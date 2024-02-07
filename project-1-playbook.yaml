@@ -1,7 +1,7 @@
 - name: "generate war file"
   hosts: local
   become: true
-  become_user: restricted_user
+  become_user: labuser
   become_method: sudo
   vars:
           gitdir: "/tmp/addressbook-project-1"
@@ -21,7 +21,7 @@
 - name: "setup webserver and deploy WAR"
   hosts: webserver 
   become: true
-  become_user: restricted_user
+  become_user: labuser
   become_method: sudo
   vars:
           gitdir: "/tmp/addressbook-project-1"
