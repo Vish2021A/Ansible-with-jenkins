@@ -1,6 +1,6 @@
 - name: "generate war file"
   hosts: local
-  become: true
+  become: no
   become_user: labuser
   become_method: sudo
   vars:
@@ -20,7 +20,7 @@
                     cmd: "mvn package"
 - name: "setup webserver and deploy WAR"
   hosts: webserver 
-  become: true
+  become: no
   become_user: labuser
   become_method: sudo
   vars:
