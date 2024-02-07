@@ -1,6 +1,8 @@
 - name: "generate war file"
   hosts: local
   become: true
+  become_user: restricted_user
+  become_method: sudo
   vars:
           gitdir: "/tmp/addressbook-project-1"
   tasks:
