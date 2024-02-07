@@ -1,7 +1,7 @@
 - name: "generate war file"
   hosts: local
-  become: yes
-  become_user: labuser
+  become: true
+  become_user: jenkins
   become_method: sudo
   vars:
           gitdir: "/tmp/addressbook-project-1"
@@ -20,8 +20,8 @@
                     cmd: "mvn package"
 - name: "setup webserver and deploy WAR"
   hosts: webserver 
-  become: yes
-  become_user: labuser
+  become: true
+  become_user: jenkins
   become_method: sudo
   vars:
           gitdir: "/tmp/addressbook-project-1"
