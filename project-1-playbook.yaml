@@ -1,6 +1,6 @@
 - name: "generate war file"
   hosts: local
-  become: no
+  become: true
   vars:
           gitdir: "/tmp/addressbook-project-1"
   tasks:
@@ -18,7 +18,7 @@
                     cmd: "mvn package"
 - name: "setup webserver and deploy WAR"
   hosts: webserver 
-  become: no
+  become: true
   vars:
           gitdir: "/tmp/addressbook-project-1"
   tasks:
